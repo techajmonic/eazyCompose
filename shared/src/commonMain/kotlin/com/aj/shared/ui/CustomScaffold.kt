@@ -43,7 +43,7 @@ import com.aj.shared.theme.whiteColor
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CustomScaffold(
-    title: String = "",
+    title: String ?= null,
     showBack: Boolean = false,
     onBackClick: () -> Unit = {},
     action1Click: () -> Unit = {},
@@ -81,65 +81,67 @@ fun CustomScaffold(
     Scaffold(
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = title,
-                        color = titleColor,
-                        style = titleStyle
-                    )
-                },
-                navigationIcon = {
-                    if (showBack) {
-                        CustomImage(
-                            model = backImg,
-                            modifier = Modifier
-                                .clickable(
-                                    interactionSource = remember { MutableInteractionSource() },
-                                    indication = null,
-                                    onClick = onBackClick
-                                )
-                                .size(iconSize.dp).padding(start = 4.dp)
+            if(title != null) {
+                TopAppBar(
+                    title = {
+                        Text(
+                            text = title,
+                            color = titleColor,
+                            style = titleStyle
                         )
-                    }
-                },
-                actions = {
-                    Row(
-                        modifier = Modifier,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        if (action1Img != null) {
+                    },
+                    navigationIcon = {
+                        if (showBack) {
                             CustomImage(
-                                model = action1Img,
+                                model = backImg,
                                 modifier = Modifier
                                     .clickable(
                                         interactionSource = remember { MutableInteractionSource() },
                                         indication = null,
-                                        onClick = action1Click
+                                        onClick = onBackClick
                                     )
                                     .size(iconSize.dp).padding(start = 4.dp)
                             )
                         }
-                        if (action2Img != null) {
-                            CustomImage(
-                                model = action2Img,
-                                modifier = Modifier
-                                    .clickable(
-                                        interactionSource = remember { MutableInteractionSource() },
-                                        indication = null,
-                                        onClick = action2Click
-                                    )
-                                    .size(iconSize.dp).padding(start = 4.dp)
-                            )
+                    },
+                    actions = {
+                        Row(
+                            modifier = Modifier,
+                            horizontalArrangement = Arrangement.spacedBy(6.dp),
+                            verticalAlignment = Alignment.CenterVertically
+                        ) {
+                            if (action1Img != null) {
+                                CustomImage(
+                                    model = action1Img,
+                                    modifier = Modifier
+                                        .clickable(
+                                            interactionSource = remember { MutableInteractionSource() },
+                                            indication = null,
+                                            onClick = action1Click
+                                        )
+                                        .size(iconSize.dp).padding(start = 4.dp)
+                                )
+                            }
+                            if (action2Img != null) {
+                                CustomImage(
+                                    model = action2Img,
+                                    modifier = Modifier
+                                        .clickable(
+                                            interactionSource = remember { MutableInteractionSource() },
+                                            indication = null,
+                                            onClick = action2Click
+                                        )
+                                        .size(iconSize.dp).padding(start = 4.dp)
+                                )
+                            }
                         }
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = transparentColor,
-                    titleContentColor = whiteColor
+                    },
+                    colors = TopAppBarDefaults.topAppBarColors(
+                        containerColor = transparentColor,
+                        titleContentColor = whiteColor
+                    )
                 )
-            )
+            }
         },
         bottomBar = {
             if (bottomBar != null) {
