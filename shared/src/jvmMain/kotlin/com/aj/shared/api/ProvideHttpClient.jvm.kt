@@ -1,4 +1,4 @@
-package com.aj.shared.api
+package com.ajmonic.shared.api
 
 import com.russhwolf.settings.PreferencesSettings
 import com.russhwolf.settings.Settings

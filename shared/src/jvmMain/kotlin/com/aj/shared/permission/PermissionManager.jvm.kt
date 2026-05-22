@@ -1,4 +1,4 @@
-package com.aj.shared.permission
+package com.ajmonic.shared.permission
 
 import androidx.compose.runtime.Composable
 

@@ -1,10 +1,10 @@
-package com.aj.shared.picker
+package com.ajmonic.shared.picker
 
 import android.net.Uri
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.runtime.*
-import com.aj.shared.api.appContext
+import com.ajmonic.shared.api.appContext
 import java.io.File
 
 actual class PlatformMediaPicker actual constructor() {

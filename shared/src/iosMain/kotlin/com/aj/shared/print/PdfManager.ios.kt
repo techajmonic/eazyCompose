@@ -1,4 +1,4 @@
-package com.aj.shared.print
+package com.ajmonic.shared.print
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column

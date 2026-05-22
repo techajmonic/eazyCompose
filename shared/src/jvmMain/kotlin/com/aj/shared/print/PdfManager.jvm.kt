@@ -1,4 +1,4 @@
-package com.aj.shared.print
+package com.ajmonic.shared.print
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.toAwtImage
 import androidx.compose.ui.graphics.toComposeImageBitmap
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.use
-import com.aj.shared.theme.whiteColor
+import com.ajmonic.shared.theme.whiteColor
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

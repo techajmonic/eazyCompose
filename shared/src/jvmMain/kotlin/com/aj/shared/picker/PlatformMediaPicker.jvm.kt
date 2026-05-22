@@ -1,7 +1,7 @@
-package com.aj.shared.picker
+package com.ajmonic.shared.picker
 
 import androidx.compose.runtime.Composable
-import com.aj.shared.ui.AppSnackbarManager
+import com.ajmonic.shared.ui.AppSnackbarManager
 import org.bytedeco.javacv.Java2DFrameConverter
 import org.bytedeco.javacv.OpenCVFrameGrabber
 import java.awt.BorderLayout

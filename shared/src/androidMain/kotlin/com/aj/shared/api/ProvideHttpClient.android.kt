@@ -1,4 +1,4 @@
-package com.aj.shared.api
+package com.ajmonic.shared.api
 
 import android.content.Context
 import com.russhwolf.settings.Settings

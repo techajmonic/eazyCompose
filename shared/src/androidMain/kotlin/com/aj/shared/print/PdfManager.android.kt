@@ -1,4 +1,4 @@
-package com.aj.shared.print
+package com.ajmonic.shared.print
 
 import android.content.Context
 import android.content.Intent
