@@ -73,7 +73,8 @@ fun <T> CommonDropDown(
     error: String? = null,
     showFullList: Boolean = false,
     modifier: Modifier = Modifier,
-    dropDownBackGround : Color = whiteColor
+    dropDownBackGround : Color = whiteColor,
+    labelColor :Color = blackColor
 ) {
     var showDialog by remember { mutableStateOf(false) }
     var searchText by remember { mutableStateOf("") }
@@ -138,7 +139,8 @@ fun <T> CommonDropDown(
                 borderColor = if (error != null) rejectedRedColor
                 else borderBGColor,
                 radius = 6,
-                enabled = false
+                enabled = false,
+                labelColor = labelColor
             )
 
             Box(
