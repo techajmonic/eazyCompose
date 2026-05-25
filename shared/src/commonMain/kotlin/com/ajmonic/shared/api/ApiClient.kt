@@ -25,6 +25,7 @@ import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonPrimitive
 import kotlinx.serialization.json.jsonObject
 import kotlin.time.Clock
 
@@ -221,26 +222,36 @@ fun FormBuilder.appendFile(
 
 @PublishedApi
 internal fun FormBuilder.appendFields(obj: Any) {
+
     val json = Json.encodeToString(obj)
+
     Json.parseToJsonElement(json)
         .jsonObject
-        .forEach {
+        .forEach { (key, value) ->
+
             append(
-                it.key,
-                it.value.toString()
+                key,
+                (value as? JsonPrimitive)
+                    ?.content
+                    ?: value.toString()
             )
         }
 }
 
 @PublishedApi
 internal fun ParametersBuilder.appendFields(obj: Any) {
+
     val json = Json.encodeToString(obj)
+
     Json.parseToJsonElement(json)
         .jsonObject
-        .forEach {
+        .forEach { (key, value) ->
+
             append(
-                it.key,
-                it.value.toString()
+                key,
+                (value as? JsonPrimitive)
+                    ?.content
+                    ?: value.toString()
             )
         }
 }
